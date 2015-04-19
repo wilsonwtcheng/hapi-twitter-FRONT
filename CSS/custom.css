@@ -1,0 +1,41 @@
+body {
+  margin: 0 auto; /*centers page*/
+  width: 90%;
+	background: url("/images/bubbly_soccer.jpg");
+	/*background-size: 1440px 800px;*/
+	background-size: cover;
+
+	background-repeat:no-repeat;
+	display: compact;
+	color: white;
+}
+
+.vert-offset-top-3{
+    margin-top: 3em;
+}
+
+.vert-offset-top-1{
+    margin-top: 1em;
+}
+/*body {
+     margin: 0;
+     background: url('https://www.google.com/images/srpr/logo3w.png');
+     background-size: 1440px 800px;
+     background-repeat:no-repeat;
+    display: compact;
+     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+*/
+.search-div, .add-div, .list-div, .delete-div, .boxStyle {
+  background-color: #F8F8F8;
+  padding: 5px 20px 20px 20px;
+  border-radius: 5px;
+  color: black;
+}
+
+.database-box {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #EFEFEC;
+}
+
