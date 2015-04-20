@@ -18,94 +18,54 @@
   </head>
 
   <body>
+    <div class="row">
+      <div class="col-xs-10"> 
+      </div>
+      <div class="col-xs-2 loginStatus">
+      </div>
+    </div> 
 
-    <div class="vert-offset-top-3"> <!-- for offsetting navbar -->
+    <div class="vert-offset-top-3"> 
+    </div>
 
-      <h1>Welcome to FakeTwitter. <img src="https://g.twimg.com/Twitter_logo_blue.png" alt="Twitter Icon" style="width:64px;height:64px; "></h1>
-     
-      <div class="row">
-        <div class="col-xs-6" >
-          Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle, using FakeTwitter.
-        </div>
-
-        <div class="col-xs-6">
-
-          <div class="col-xs-12">
-            <div class="col-xs-1 "></div>
-            <div class="col-xs-10 boxStyle">
-              <input type="text" class="form-control login-username" placeholder="Email or username">
-              <div class="input-group">
-              <input type="text" class="form-control login-password" placeholder="Password">
-              <span class="input-group-btn">
-                <button class="btn btn-primary login-button" type="button">Log in</button>
-              </span>            
-              </div>
-               <input type="checkbox" aria-label="...">
-                Remember me . Forgot password?
-            </div>
-            <div class="col-xs-1"></div>
-          </div>
-
-        <br>
-
-        <div class="col-xs-12 vert-offset-top-1">
-          <div class="col-xs-1 "></div>
-            <div class="col-xs-10 boxStyle">
-              <strong> New to FakeTwitter? </strong>Sign up
-              <input type="text" class="form-control signup-username" placeholder="Full name">
-              <input type="text" class="form-control signup-email" placeholder="Email">
-              <input type="text" class="form-control signup-password" placeholder="Password">
-              <span class="input-group-btn">
-                <button class="btn btn-warning signup-button" type="button">Sign up for FakeTwitter</button>
-              </span>
-            </div>
-          <div class="col-xs-1"></div>
+    <div class="database-box vert-offset-top-3">
+      
+      <h2>Welcome to your Page</h2>
+      <div class="table-responsive">
+        <div class="col-xs-12 boxStyle">
+          <input type="text" class="form-control newTweet" placeholder="What's happening?">
+          <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-primary tweet-button" type="button">Tweet!</button>
+            <button class="btn btn-warning list-all-button" type="button">List All!</button>
+          </span>            
           </div>
         </div>
+
+
+<!-- List all table starts here (PRESENTATION PURPOSE) ********************************************-->
+
+      <table id="all-posts" class="table table-condensed table-striped" >
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tweet</th>
+         </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+<!-- List all table starts here  (PRESENTATION PURPOSE)********************************************-->
+
+
       </div>
     </div>
-   
+
+
       <button class="btn btn-danger logout-button" type="button">Log out</button>
-<!-- 
-
-      <div class="search-div">
-        <h3>Search For A Quote!</h3>
-        <div class="input-group">
-          <input type="text" class="form-control search-value" placeholder="Search stuff here...">
-          <span class="input-group-btn">
-            <button class="btn btn-default searchButton" type="button">Go!</button>
-          </span>
-        </div>
-      </div>
 
 
- -->
 </body>
 </html>
 
-  <!--     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-              <img src="images/logo/tnw-logo.svg" alt="" width="auto" height="100%">
-            </a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Dashboard</a></li>
-              <li><a href="#">Settings</a></li>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Help</a></li>
-            </ul>
-            <form class="navbar-form navbar-right">
-              <input type="text" class="form-control" placeholder="Search...">
-            </form>
-          </div>
-        </div>
-      </nav> -->

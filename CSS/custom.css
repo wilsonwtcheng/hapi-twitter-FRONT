@@ -9,6 +9,20 @@ body {
 	display: compact;
 	color: white;
 }
+/*
+.search-div, .add-div, .list-div, .delete-div {
+  background-color: #EFEFEC;
+  padding: 5px 20px 20px 20px;
+  border-radius: 5px;
+}
+*/
+
+.database-box {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #EFEFEC;
+  color: black;
+}
 
 .vert-offset-top-3{
     margin-top: 3em;
