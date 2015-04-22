@@ -9,15 +9,15 @@ $(document).ready(function() {
   });
   
   $(document).on('click','.logout-button', function(){
-  logOutRequest();
+    logOutRequest();
   });
   
   $(document).on('click','.tweet-button', function(){
-  tweetRequest();
+    tweetRequest();
   });
   
   $(document).on('click','.list-all-button', function(){
-  listRequest();
+    listRequest();
   });
   
   // $(document).on('click','.listButton', function(){
@@ -47,8 +47,9 @@ $(document).ready(function() {
         // $('.signup-email').val("awesome");
         // $('.signup-password').val("cool");
         alert("Sign up successful!");
-        window.location = "/tweetpage.html";
-        postLoginStatus();
+        loginRequestTwo();
+        //window.location = "/tweetpage.html";
+        // postLoginStatus();
       }
     }) 
   }
@@ -57,7 +58,7 @@ $(document).ready(function() {
     $('.loginStatus').append("<p>Status: Logged in</p>");
   }
 
-//login request
+//login request for non-first time login
   function loginRequest() {
     $.ajax({
       type: "POST",
@@ -69,17 +70,45 @@ $(document).ready(function() {
         },
       },   
       dataType: "JSON",
-      xhrFields: { //xhrFields is for necessary for cross domain and probably cross ports.
+      xhrFields: { 
       withCredentials: true 
       },
+      //in sign in method, backend geernates cookie, we are creating cookie, so don't need for xhrFields and withCredenitals true.
       success: function(response) {
-       console.log("Great success, user logged in.", response);
+       console.log("User log in request successfully sent to backend.", response);
         //$('.login-username').val("nice");
         //$('.login-password').val("awesome");
-        window.location = "/tweetpage.html";
-        listRequest();
-        postLoginStatus();
+      //  window.location = "/tweetpage.html";
+        // listRequest();
+       // postLoginStatus();
+      }
+    }) 
+  }
 
+
+//login request for after sign up
+  function loginRequestTwo() {
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost:3000/login',    
+      data: {
+        userInfo: {
+          username:  $('.signup-username').val(),
+          password:  $('.signup-password').val()
+        },
+      },   
+      dataType: "JSON",
+      xhrFields: { 
+      withCredentials: true 
+      },
+      //in sign in method, backend geernates cookie, we are creating cookie, so don't need for xhrFields and withCredenitals true.
+      success: function(response) {
+       console.log("User log in request successfully sent to backend.", response);
+        //$('.login-username').val("nice");
+        //$('.login-password').val("awesome");
+      //  window.location = "/tweetpage.html";
+        // listRequest();
+       // postLoginStatus();
       }
     }) 
   }
@@ -89,6 +118,8 @@ $(document).ready(function() {
     $.ajax({
       type: "POST",
       url: 'http://localhost:3000/tweets',
+      // url: 'http://192.168.100.63/tweets', //this is victoria's
+      // url: 'http://192.168.100.102/tweets', //this is harry's
       data: {
         tweet: {
           message:  $('.newTweet').val(),
@@ -112,16 +143,19 @@ $(document).ready(function() {
     $.ajax({
       type: "GET",
       url: 'http://localhost:3000/tweets',
+      // url: 'http://192.168.100.63/tweets',
+      // url: 'http://192.168.100.102/tweets', //this is harry's
       dataType: "JSON",
       success: function(response) {
         console.log("Great listing success", response);
         $('#all-posts > tbody').text(''); 
         response.forEach(function (post) {
-          $('#all-posts > tbody').append("<tr class='post-item'>" + "<td>" + post._id + "</td>" + "<td>" + post.message + "</td>"+ "</tr>" );
+          $('#all-posts > tbody').append("<tr class='post-item'>" + "<td>" + post._id + "</td>" + "<td>" + post.message + "</td>"+ "<td>" + post.user_id + "</td></tr>" );
         });
       }
     }) 
   }
+
 
 //logout request
     
